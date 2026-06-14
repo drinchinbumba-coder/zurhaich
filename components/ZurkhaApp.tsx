@@ -731,6 +731,24 @@ export default function ZurkhaApp() {
                         <span style={{ fontSize: 16 }}>👤</span>
                         Мэдээлэл
                       </button>
+                      <a
+                        href="https://github.com/drinchinbumba-coder/zurhaich/releases/download/1.0.1/Zurhaich.apk"
+                        download
+                        onClick={() => setShowProfileMenu(false)}
+                        style={{
+                          display: "flex", alignItems: "center", gap: 10,
+                          width: "100%", background: "transparent",
+                          borderBottom: "1px solid rgba(227,180,88,0.1)",
+                          color: C.cream, padding: "13px 18px",
+                          cursor: "pointer", fontSize: 14, fontWeight: 600,
+                          textDecoration: "none",
+                        }}
+                        onMouseEnter={e => (e.currentTarget.style.background = "rgba(227,180,88,0.08)")}
+                        onMouseLeave={e => (e.currentTarget.style.background = "transparent")}
+                      >
+                        <span style={{ fontSize: 16 }}>📱</span>
+                        Апп татах
+                      </a>
                       <button
                         onClick={handleLogout}
                         style={{
