@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Scrollbar нуух ── */
+.hide-scrollbar,
+.tabs-row {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+}
+.hide-scrollbar::-webkit-scrollbar,
+.tabs-row::-webkit-scrollbar {
+  display: none;
+}
+.tabs-row {
+  display: flex;
+  overflow-x: auto;
+}
+
+/* ── Glow animation ── */
+@keyframes goldGlow {
+  0%, 100% { box-shadow: 0 0 12px rgba(227,180,88,0.3), 0 0 24px rgba(227,180,88,0.1); }
+  50%       { box-shadow: 0 0 20px rgba(227,180,88,0.55), 0 0 40px rgba(227,180,88,0.2); }
+}
+@keyframes starPulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50%       { opacity: 1;   transform: scale(1.15); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Mystical card ── */
+.mystical-card {
+  background: rgba(16, 22, 54, 0.72);
+  border: 1px solid rgba(227, 180, 88, 0.18);
+  border-radius: 20px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+  animation: fadeInUp 0.35s ease both;
+}
+.mystical-card:hover {
+  border-color: rgba(227, 180, 88, 0.32);
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(227, 180, 88, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transition: all 0.25s ease;
+}
+
+/* ── Glow card (featured) ── */
+.glow-card {
+  animation: goldGlow 3s ease-in-out infinite;
+}
+
+/* ── Gold shimmer text ── */
+.shimmer-text {
+  background: linear-gradient(90deg, #E3B458 0%, #F0CE8C 40%, #C9A0DC 60%, #E3B458 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s linear infinite;
+}
+
+/* ── Star decoration ── */
+.star-divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 14px 0;
+}
+.star-divider::before,
+.star-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(227,180,88,0.4), transparent);
+}
+
+/* ── Pill glow ── */
+.pill-active {
+  box-shadow: 0 0 10px rgba(227, 180, 88, 0.35);
+}
+
+/* ── Input focus glow ── */
+.zk-input:focus {
+  border-color: rgba(227, 180, 88, 0.7) !important;
+  box-shadow: 0 0 0 3px rgba(227, 180, 88, 0.12);
+  outline: none;
+}
+
+/* ── Fade in animation on tab change ── */
+.tab-content {
+  animation: fadeInUp 0.3s ease both;
+}
+
+/* ── Header: профайл нэр desktop+mobile дээр нуух ── */
+.hdr-profile-name {
+  display: none !important;
+}
+
+/* ── Header mobile ── */
+@media (max-width: 480px) {
+  .hdr-logo-icon {
+    width: 26px !important;
+    height: 26px !important;
+    font-size: 13px !important;
+  }
+  .hdr-logo-title {
+    font-size: 12px !important;
+    letter-spacing: 0 !important;
+  }
+  .hdr-avatar {
+    width: 28px !important;
+    height: 28px !important;
+    font-size: 12px !important;
+  }
+  .hdr-premium {
+    padding: 2px 7px !important;
+    font-size: 10px !important;
+  }
+}
