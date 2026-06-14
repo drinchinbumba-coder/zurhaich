@@ -732,7 +732,7 @@ export default function ZurkhaApp() {
                         Мэдээлэл
                       </button>
                       <a
-                        href="https://github.com/drinchinbumba-coder/zurhaich/releases/download/1.0.1/app-debug.apk"
+                        href="https://github.com/drinchinbumba-coder/zurhaich/releases/download/1.0.1/Zurhaich.apk"
                         download
                         onClick={() => setShowProfileMenu(false)}
                         style={{
