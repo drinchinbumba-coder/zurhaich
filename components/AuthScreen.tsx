@@ -9,7 +9,7 @@ import { store } from "@/lib/store";
 /* ── Constants ─────────────────────────────────────────────────────────────── */
 
 const BACKEND = (
-  process.env.NEXT_PUBLIC_BACKEND_URL ?? "http://localhost:4000"
+  process.env.NEXT_PUBLIC_BACKEND_URL ?? "zurhaich-backend.vercel.app"
 ).replace(/\/$/, "");
 
 const MONTHS = [
